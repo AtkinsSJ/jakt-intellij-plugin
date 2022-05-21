@@ -37,9 +37,9 @@ class JaktLexer : Lexer() {
                 if (token.span.end != next.span.start) {
                     tokens.add(
                         Token(
-                        TokenContents.Whitespace,
-                        Span(token.span.fileId, token.span.end, next.span.start),
-                    )
+                            TokenContents.Whitespace,
+                            Span(token.span.fileId, token.span.end, next.span.start),
+                        )
                     )
                 }
             }
@@ -146,7 +146,8 @@ class JaktLexer : Lexer() {
 
     sealed class JaktElementType(debugName: String) : IElementType(debugName, JaktLanguage)
 
-    class SingleQuotedStringType(codepoint: Int) : JaktElementType("SingleQuotedString{${buildString { appendCodePoint(codepoint) }}")
+    class SingleQuotedStringType(codepoint: Int) :
+        JaktElementType("SingleQuotedString{${buildString { appendCodePoint(codepoint) }}")
 
     class QuotedStringType(string: String) : JaktElementType("QuotedString{$string}")
 
@@ -164,11 +165,11 @@ class JaktLexer : Lexer() {
 
     object CommaType : JaktElementType("CommaType")
 
-    object SemicolonType : JaktElementType("Semicolon")
+    object SemicolonType : JaktElementType("SemicolonType")
 
     object OperatorType : JaktElementType("OperatorType")
 
-    object WhitespaceType : JaktElementType("Whitespace")
+    object WhitespaceType : JaktElementType("WhitespaceType")
 
     object GarbageType : JaktElementType("GarbageType")
 

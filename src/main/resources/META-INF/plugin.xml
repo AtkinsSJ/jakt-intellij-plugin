@@ -18,6 +18,10 @@
             language="Jakt"
             implementationClass="org.serenityos.jakt.plugin.highlighting.JaktSyntaxHighlighterFactory"
         />
+        <lang.parserDefinition
+            language="Jakt"
+            implementationClass="org.serenityos.jakt.plugin.JaktParserDefinition"
+        />
         <colorSettingsPage implementation="org.serenityos.jakt.plugin.highlighting.JaktColorSettingsPage" />
     </extensions>
 </idea-plugin>
