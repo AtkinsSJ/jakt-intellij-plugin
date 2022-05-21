@@ -2,7 +2,6 @@ extern crate libc;
 extern crate core;
 
 use std::ffi::{CStr, CString};
-use std::path::Path;
 use serde_derive::Serialize;
 use jakt::{JaktError, lexer, parser};
 use jakt::lexer::Token;

@@ -5,7 +5,9 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Span(@SerialName("file_id") val fileId: Int, val start: Int, val end: Int)
+data class Span(@SerialName("file_id") val fileId: Int, val start: Int, val end: Int) {
+    val range get() = start..end
+}
 
 @Serializable(with = TokenContents.Serializer::class)
 sealed class TokenContents {
@@ -120,6 +122,10 @@ sealed class TokenContents {
     object FatArrow : TokenContents()
 
     object Garbage : TokenContents()
+
+    // Not produced by Jakt, but necessary to "fill in the gap" of the token
+    // stream for JaktLexer
+    object Whitespace : TokenContents()
 }
 
 @Serializable

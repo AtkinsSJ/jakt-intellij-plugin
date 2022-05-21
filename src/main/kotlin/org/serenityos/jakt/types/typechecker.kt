@@ -216,27 +216,29 @@ sealed class IntegerConstant {
 
 @Serializable(with = NumericConstant.Serializer::class)
 sealed class NumericConstant {
+    abstract val value: Number
+
     object Serializer : KSerializer<NumericConstant> by rustEnumSerializer()
 
-    data class I8(val value: Byte) : NumericConstant()
+    data class I8(override val value: Byte) : NumericConstant()
 
-    data class I16(val value: Short) : NumericConstant()
+    data class I16(override val value: Short) : NumericConstant()
 
-    data class I32(val value: Int) : NumericConstant()
+    data class I32(override val value: Int) : NumericConstant()
 
-    data class I64(val value: Long) : NumericConstant()
+    data class I64(override val value: Long) : NumericConstant()
 
     // TODO: Somehow use unsigned types here, the serializer doesn't like it ATM
 
-    data class U8(val value: Byte) : NumericConstant()
+    data class U8(override val value: Byte) : NumericConstant()
 
-    data class U16(val value: Short) : NumericConstant()
+    data class U16(override val value: Short) : NumericConstant()
 
-    data class U32(val value: Int) : NumericConstant()
+    data class U32(override val value: Int) : NumericConstant()
 
-    data class U64(val value: Long) : NumericConstant()
+    data class U64(override val value: Long) : NumericConstant()
 
-    data class USize(val value: Long) : NumericConstant()
+    data class USize(override val value: Long) : NumericConstant()
 }
 
 
