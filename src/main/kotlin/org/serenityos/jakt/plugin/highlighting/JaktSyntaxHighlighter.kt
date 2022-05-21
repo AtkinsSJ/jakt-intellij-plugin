@@ -1,4 +1,4 @@
-package org.serenityos.jakt.highlighting
+package org.serenityos.jakt.plugin.highlighting
 
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors
 import com.intellij.openapi.editor.HighlighterColors
@@ -10,7 +10,7 @@ import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.psi.tree.IElementType
-import org.serenityos.jakt.JaktLexer
+import org.serenityos.jakt.plugin.JaktLexer
 
 class JaktSyntaxHighlighter: SyntaxHighlighterBase() {
     override fun getHighlightingLexer() = JaktLexer()

@@ -1,9 +1,9 @@
-package org.serenityos.jakt.highlighting
+package org.serenityos.jakt.plugin.highlighting
 
 import com.intellij.openapi.options.colors.AttributesDescriptor
 import com.intellij.openapi.options.colors.ColorDescriptor
 import com.intellij.openapi.options.colors.ColorSettingsPage
-import org.serenityos.jakt.JaktLanguage
+import org.serenityos.jakt.plugin.JaktLanguage
 
 class JaktColorSettingsPage : ColorSettingsPage {
     private val DESCRIPTORS = mapOf(

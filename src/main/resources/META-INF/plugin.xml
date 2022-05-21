@@ -9,15 +9,15 @@
     <extensions defaultExtensionNs="com.intellij">
         <fileType
                 name="Jakt File"
-                implementationClass="org.serenityos.jakt.JaktFile$FileType"
+                implementationClass="org.serenityos.jakt.plugin.JaktFile$FileType"
                 fieldName="INSTANCE"
                 language="Jakt"
                 extensions="jakt"
         />
         <lang.syntaxHighlighterFactory
             language="Jakt"
-            implementationClass="org.serenityos.jakt.highlighting.JaktSyntaxHighlighterFactory"
+            implementationClass="org.serenityos.jakt.plugin.highlighting.JaktSyntaxHighlighterFactory"
         />
-        <colorSettingsPage implementation="org.serenityos.jakt.highlighting.JaktColorSettingsPage" />
+        <colorSettingsPage implementation="org.serenityos.jakt.plugin.highlighting.JaktColorSettingsPage" />
     </extensions>
 </idea-plugin>

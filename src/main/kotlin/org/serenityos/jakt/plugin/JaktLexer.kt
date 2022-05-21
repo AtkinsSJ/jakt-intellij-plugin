@@ -1,13 +1,13 @@
-package org.serenityos.jakt
+package org.serenityos.jakt.plugin
 
 import com.intellij.lexer.Lexer
 import com.intellij.lexer.LexerPosition
 import com.intellij.openapi.util.text.Strings
 import com.intellij.psi.tree.IElementType
-import org.serenityos.jakt.jna.JaktC
-import org.serenityos.jakt.types.Span
-import org.serenityos.jakt.types.Token
-import org.serenityos.jakt.types.TokenContents
+import org.serenityos.jakt.bindings.JaktC
+import org.serenityos.jakt.bindings.types.Span
+import org.serenityos.jakt.bindings.types.Token
+import org.serenityos.jakt.bindings.types.TokenContents
 
 class JaktLexer : Lexer() {
     private var buffer: CharSequence = Strings.EMPTY_CHAR_SEQUENCE
@@ -35,10 +35,12 @@ class JaktLexer : Lexer() {
             if (index != newTokens.lastIndex) {
                 val next = newTokens[index + 1]
                 if (token.span.end != next.span.start) {
-                    tokens.add(Token(
+                    tokens.add(
+                        Token(
                         TokenContents.Whitespace,
                         Span(token.span.fileId, token.span.end, next.span.start),
-                    ))
+                    )
+                    )
                 }
             }
         }
